@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="form" (submit)="submit()" novalidate>
+      <div class="login_input">    
+        <input formControlName="login" type="text" name="login" placeholder="Enter login" required>
+      </div>
+      <div class="password_input">
+        <input formControlName="password" type="password" name="password" placeholder="Enter password" required>
+      </div>
+      <div class="submit_input">
+        <input type="submit" name="submit" value="Sign in">
+      </div>
+    </form>
+  </div>

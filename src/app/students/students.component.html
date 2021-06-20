@@ -1,0 +1,29 @@
+<div class="studentsList">
+    <form [formGroup]="form" (submit)="submit()" novalidate>
+          <input formControlName="name" type="text" name="name" placeholder="Enter name" required>
+          <input formControlName="age" type="number" name="age" placeholder="Enter age" required>
+          <input formControlName="address" type="text" name="address" placeholder="Enter address" required>
+          <input formControlName="phoneNumber" type="text" name="phoneNumber" placeholder="Enter phone number" required>
+          <input type="submit" name="submit" value="Add">
+      </form>
+    <table class = "table" style="width: 100%;">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">PhoneNumber</th>
+            <th scope="col"></th>
+        </tr>
+        <tr *ngFor= "let student of students">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.address }}</td>
+            <td>{{ student.phoneNumber }}</td>
+            <td>                  
+                <button id="remove" (click)="deleteRow(student.id)">remove</button>
+            </td>
+        </tr>
+    </table>
+</div>
